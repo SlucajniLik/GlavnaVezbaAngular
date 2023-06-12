@@ -1,0 +1,17 @@
+
+<select  (change)="Filtriraj()" [(ngModel)]="vrednost" >
+<option [ngValue]="'4'"  >4</option>
+<option [ngValue]="'5'"   >5</option>
+
+</select>
+
+<div style="background-color:lightblue ;"
+*ngFor="let osoba of osobe"
+>
+<p>Id je :{{osoba.id}}</p>
+<p>Username je :{{osoba.username}}</p>
+<p>Lozinka  je :{{osoba.password}}</p>
+<p>Broj je :{{osoba.number}}</p>
+<button   style="background-color:red;" (click)="Izbrisi(osoba.id)" >Izbrisi</button>
+<button style="background-color: green;"  (click)="Izmeni(osoba.id)" >Izmeni</button>
+</div>

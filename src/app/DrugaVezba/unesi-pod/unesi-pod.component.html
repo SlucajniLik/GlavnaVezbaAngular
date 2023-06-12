@@ -1,0 +1,24 @@
+<form  [formGroup]="form">
+<input placeholder="Unesite korisnicko ime " formControlName="Username">
+<input placeholder="Unesite lozinku" formControlName="Password">
+<input placeholder="Unesite broj" formControlName="Num">
+<button (click)="addOsobu()"  >Posalji</button>
+</form>
+
+<diV  *ngIf="Username?.touched"  >
+  <div   [style.backgroundColor]="'red'"  *ngIf="Username?.errors?.['required']"  >Polje za username je obavezno</div>
+   <div  [style.backgroundColor]="'red'"  *ngIf="Username?.errors?.['required']"  >fgfg</div>
+ </diV>
+
+
+
+ <diV  *ngIf="Password?.touched"  >
+   <div  [style.backgroundColor]="'red'"  *ngIf="Password?.errors?.['minlength']"  >Polje za lozinku mora imati makar 2 karaktera</div>
+ </diV>
+
+
+
+
+ <diV  *ngIf="Username?.touched"  >
+   <div  [style.backgroundColor]="'red'"  *ngIf="Username?.errors?.['maxlength']"  >Polje za broj mora imati max 3 kraktera</div>
+ </diV>

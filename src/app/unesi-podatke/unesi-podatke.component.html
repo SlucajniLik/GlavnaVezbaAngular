@@ -1,0 +1,32 @@
+<div>
+    <form  [formGroup]="form">
+<input placeholder="Unesite korisnicko ime" formControlName="Username"   [(ngModel)]="osoba.username"  />
+<input placeholder="Unesite lozinku" formControlName="Lozinka"  [(ngModel)]="osoba.lozinka"  />
+<input placeholder="Unesite ime" formControlName="Ime"   [(ngModel)]="osoba.ime"  />
+<input placeholder="Unesite prezime" formControlName="Prezime"  [(ngModel)]="osoba.prezime"  />
+<button (click)="addOsobu()"  >Unesite podatke</button>
+</form>
+
+<div *ngIf="Username?.touched" >
+<div  [style.backgroundColor]="'red'" *ngIf="Username?.errors?.['required']" >Polje za username je obavezno</div>
+<div  [style.backgroundColor]="'red'" *ngIf="Username?.errors?.['neMozeUsername']" >Polje za username ne sme sadrzati @</div>
+</div>
+<div *ngIf="Lozinka?.touched" >
+    <div  [style.backgroundColor]="'red'" *ngIf="Lozinka?.errors?.['required']"  >Polje za lozinku je obavezno</div>
+</div>
+
+    <div *ngIf="Ime?.touched" >
+        <div  [style.backgroundColor]="'red'" *ngIf="Ime?.errors?.['minlength']"  >Polje za ime mora imati makar tri karaktera</div>
+</div>
+
+
+
+
+
+
+        <div *ngIf="Prezime?.touched" >
+            <div  [style.backgroundColor]="'red'" *ngIf="Prezime?.errors?.['minlength']" >Polje za prezime mora imati makar tri karaktera</div>
+</div>
+
+
+</div>

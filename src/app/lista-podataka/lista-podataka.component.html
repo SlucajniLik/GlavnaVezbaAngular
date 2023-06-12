@@ -1,0 +1,13 @@
+
+
+<div style="background-color:red ;"
+*ngFor="let osoba of osobe"
+>
+<p>Username je:{{osoba.username}}</p>
+<p>Lozinka je je:{{osoba.lozinka}}</p>
+<p>Ime je:{{osoba.ime}}</p>
+<p>Prezime je:{{osoba.prezime}}</p>
+<button   style="background-color: green;"  (click)="Izbrisi(osoba.id)"  >Izbrisi</button>
+<button   style="background-color: green;"  (click)="Update(osoba.id)"  >Update</button>
+</div>
+<p>Ovdeee</p>
